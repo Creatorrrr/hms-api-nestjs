@@ -1,0 +1,9 @@
+version: 0.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "arn:aws:ecs:ap-northeast-2:036662084957:task-definition/td-hms-api:1"
+        LoadBalancerInfo:
+          ContainerName: "ct-hms-api"
+          ContainerPort: 30080
