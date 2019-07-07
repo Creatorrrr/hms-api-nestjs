@@ -10,7 +10,7 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws --version
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
-      - REPOSITORY_URI=036662084957.dkr.ecr.ap-northeast-2.amazonaws.com/healthmanager/health-manager-server
+      - REPOSITORY_URI=036662084957.dkr.ecr.ap-northeast-2.amazonaws.com/hms/hms-api
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=${COMMIT_HASH:=latest}
       - npm ci
