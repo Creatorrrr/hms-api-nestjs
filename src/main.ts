@@ -19,7 +19,7 @@ import { ConsoleLogger } from '@/utils/loggers/console-logger';
     // Nest서버 생성
     const app = await NestFactory.create(AppModule, { logger: new ConsoleLogger() });
     app.useGlobalPipes(new ValidationPipe({ whitelist: true, skipMissingProperties: true, transform: true }));
-    await app.listen(10080);
+    await app.listen(30080);
   } catch(error) {
     Logger.error(error);
   }
